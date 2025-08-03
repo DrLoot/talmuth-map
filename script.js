@@ -13,27 +13,27 @@ map.fitBounds(bounds);
 const locations = [
   {
     name: "Guardian Arena",
-    coords: [320, 510],
+    coords: [1500, 510],
     desc: "A mysterious gateway to elite challenges.",
   },
   {
     name: "Royal Emporium",
-    coords: [1020, 990],
+    coords: [1110, 1110],
     desc: "Shop for gear, cosmetics, and tradeables.",
   },
   {
     name: "Engineering Bench",
-    coords: [1430, 670],
+    coords: [800, 520],
     desc: "Craft gadgets and machines.",
   },
   {
     name: "Alchemy Table",
-    coords: [1875, 1450],
+    coords: [350, 1600],
     desc: "Brew powerful potions using rare ingredients.",
   },
   {
-    name: "Tavern",
-    coords: [1040, 1200],
+    name: "Sword & Stein Tavern",
+    coords: [1100, 1300],
     desc: "Catch rumors, rest, or chat with travelers.",
   },
 ];
