@@ -7,16 +7,15 @@ html, body {
   width: 100vw;
 }
 
-/* Hover effect for ALL marker icons */
+/* Glow effect on all marker icons */
 .leaflet-marker-icon {
-  display: inline-block; /* <-- key fix */
-  transition: transform 0.2s ease, filter 0.2s ease;
+  transition: filter 0.2s ease;
 }
 
 .leaflet-marker-icon:hover {
-  transform: scale(1.2);
   filter: drop-shadow(0 0 6px #ffd700);
   cursor: pointer;
 }
+
 
 

@@ -153,6 +153,18 @@ const locations = [
     desc: "Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.",
     iconType: "npc",
   },
+  {
+    name: "Emera Crossing",
+    coords: [1896, 1764],
+    desc: "Exit to Emera Crossing zone.",
+    iconType: "location",
+  },
+  {
+    name: "Newbie Docks",
+    coords: [527, 984],
+    desc: "Where all new players start their new life in Talmuth.",
+    iconType: "location",
+  },
 ];
 
 // Place all markers with dynamic icon selection
