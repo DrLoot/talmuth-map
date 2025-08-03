@@ -6,3 +6,14 @@ html, body {
   height: 100vh;
   width: 100vw;
 }
+
+/* Hover effect for ALL marker icons */
+.hoverable-marker img {
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.hoverable-marker img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 6px #ffd700); /* gold glow */
+  cursor: pointer;
+}
