@@ -121,15 +121,16 @@ const locations = [
 
 // Place all markers with dynamic icon selection
 locations.forEach(loc => {
-  let iconToUse = npcIcon; // default
+  let iconToUse = undefined;
 
-  if (loc.iconType === "location") iconToUse = locationIcon;
+  if (loc.iconType === "npc") iconToUse = npcIcon;
   if (loc.iconType === "quest") iconToUse = questIcon;
 
-  L.marker(loc.coords, { icon: iconToUse })
+  L.marker(loc.coords, iconToUse ? { icon: iconToUse } : {})
     .addTo(map)
     .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
 });
+
 
 // Grid Coordinates Overlay
 map.on('click', function (e) {
