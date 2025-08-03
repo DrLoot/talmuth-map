@@ -30,3 +30,13 @@ A fully interactive web-based map of **Talmuth**, the town hub in the game **Los
    ```bash
    git clone https://github.com/YOUR_USERNAME/talmuth-map.git
    cd talmuth-map
+   
+2. Open index.html in a browser to test locally.
+
+3. To update:
+
+Add new markers to script.js
+
+Replace or update assets/map.png
+
+Push changes to GitHub — it will auto-update the site
