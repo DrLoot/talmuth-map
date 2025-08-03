@@ -149,7 +149,7 @@ const locations = [
   },
   {
     name: "Quarrymaster Grimstone NPC",
-    coords: [1852, 1352],
+    coords: [1369, 1612],
     desc: "Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.",
     iconType: "npc",
   },
