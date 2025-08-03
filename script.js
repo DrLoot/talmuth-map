@@ -162,16 +162,11 @@ locations.forEach(loc => {
   if (loc.iconType === "npc") iconToUse = npcIcon;
   if (loc.iconType === "quest") iconToUse = questIcon;
 
-  const marker = L.marker(loc.coords, iconToUse ? { icon: iconToUse } : {})
+  L.marker(loc.coords, iconToUse ? { icon: iconToUse } : {})
     .addTo(map)
     .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
-
-  // Wait until marker is added to DOM, then apply the hoverable class
-  marker.on('add', function () {
-    const el = marker.getElement();
-    if (el) el.classList.add('hoverable-marker');
-  });
 });
+
 
 
 

@@ -8,12 +8,13 @@ html, body {
 }
 
 /* Hover effect for ALL marker icons */
-.hoverable-marker img {
+.leaflet-marker-icon {
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.hoverable-marker img:hover {
+.leaflet-marker-icon:hover {
   transform: scale(1.2);
-  filter: drop-shadow(0 0 6px #ffd700); /* gold glow */
+  filter: drop-shadow(0 0 6px #ffd700);
   cursor: pointer;
 }
+
