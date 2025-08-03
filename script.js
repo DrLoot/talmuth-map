@@ -36,6 +36,41 @@ const locations = [
     coords: [1155, 1348],
     desc: "Catch rumors, rest, or chat with travelers.",
   },
+  {
+    name: "Altar",
+    coords: [281, 706],
+    desc: "Mysterious magical altar infused with magic from the old world.",
+  },
+  {
+    name: "Player Housing",
+    coords: [1645, 115],
+    desc: "Home Sweet Home.",
+  },
+  {
+    name: "Anvil, Furnace, and Arcane Fuser",
+    coords: [1239, 1644],
+    desc: "Anvil and Furnace are hot and ready for all your Forging needs. The Arcane Fuser is used to exchange Arcane Fragments.",
+  },
+  {
+    name: "Stove",
+    coords: [1897, 1316],
+    desc: "A public place for Cooking.",
+  },
+  {
+    name: "Terror Descent",
+    coords: [1929, 840],
+    desc: "Do you dare enter the 4 levels of the Terror Descent dungeon?",
+  },
+  {
+    name: "Cavern of Paths",
+    coords: [1961, 327],
+    desc: "All adventures from Common to Transcendent. The enemies are waiting!",
+  },
+  {
+    name: "Player Housing Crafting",
+    coords: [1557, 285],
+    desc: "If you own a home, you'll be able to enjoy your own Furnace, Anvil and Tanning station outside. You'll also have access to the rest of the crafting stations in your home.",
+  },
 ];
 
 // Add markers
