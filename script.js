@@ -77,7 +77,7 @@ const locations = [
   },
   {
     name: "Anvil, Furnace, and Arcane Fuser",
-    coords: [1239, 1644],
+    coords: [1315, 1566],
     desc: "Anvil and Furnace are hot and ready for all your Forging needs. The Arcane Fuser is used to exchange Arcane Fragments.",
     iconType: "location",
   },
@@ -114,7 +114,43 @@ const locations = [
   {
     name: "Royal Emporium NPCs",
     coords: [1311, 1106],
-    desc: "Oliver runs the Royal Emporium marketplace. Edmund Ironhand exchanges Capes and Tomes. Lavinia Dawnlight exchanges Mytical Relics.",
+    desc: "Oliver runs the Royal Emporium marketplace. Edmund Ironhand exchanges Capes and Tomes. Lavinia Dawnlight exchanges Mythical Relics.",
+    iconType: "npc",
+  },
+  {
+    name: "Orin Thalios NPC",
+    coords: [1007, 1160],
+    desc: "Orin Thalios is a great, wise sage. He controls the Waygate and offers exchanges for Membership Orbs and Valor rewards for each season's Expedition.",
+    iconType: "npc",
+  },
+  {
+    name: "Viola Nightbloom NPC",
+    coords: [839, 1104],
+    desc: "Viola Nightbloom's obsesses over Luneri and offers her magical buffs to anyone that places the crescent moon shaped currency in her tip jar.",
+    iconType: "npc",
+  },
+  {
+    name: "Salvage Captain Wren NPC",
+    coords: [355, 1650],
+    desc: "Salvage Captain Wren is an expert in the alchemical arts. She offers rewards for Arachnadon Fangs.",
+    iconType: "npc",
+  },
+  {
+    name: "Timberlord Thornsnap NPC",
+    coords: [953, 608],
+    desc: "Timberlord Thornsnap is a master engineer. He offers rewards in exchange for the rare Leafsong Resin.",
+    iconType: "npc",
+  },
+  {
+    name: "Fisherking Nautica NPC",
+    coords: [1852, 1352],
+    desc: "Fisherking Nautica is the king of fishing. He's on the lookout for Croakreaver Fins and will offer some nice rewards in exchange.",
+    iconType: "npc",
+  },
+  {
+    name: "Quarrymaster Grimstone NPC",
+    coords: [1852, 1352],
+    desc: "Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.",
     iconType: "npc",
   },
 ];
