@@ -4,19 +4,43 @@ const map = L.map('map', {
   minZoom: -1,
 });
 
-// Load your custom image map
-const bounds = [[0,0], [2048,2048]];
-const image = L.imageOverlay('assets/map.png', bounds).addTo(map);
+// Adjust based on your final image size
+const bounds = [[0, 0], [2048, 2048]];
+const image = L.imageOverlay('assets/talmuth-map.png', bounds).addTo(map);
 map.fitBounds(bounds);
 
-// Example NPCs (customize!)
-const npcs = [
-  { name: "Baldric the Blacksmith", x: 1200, y: 1300, desc: "Sells weapons and armor." },
-  { name: "Elira the Herbalist", x: 800, y: 700, desc: "Gives out potion quests." }
+// Add NPCs or Locations
+const locations = [
+  {
+    name: "Guardian Arena",
+    coords: [320, 510],
+    desc: "A mysterious gateway to elite challenges.",
+  },
+  {
+    name: "Royal Emporium",
+    coords: [1020, 990],
+    desc: "Shop for gear, cosmetics, and tradeables.",
+  },
+  {
+    name: "Engineering Bench",
+    coords: [1430, 670],
+    desc: "Craft gadgets and machines.",
+  },
+  {
+    name: "Alchemy Table",
+    coords: [1875, 1450],
+    desc: "Brew powerful potions using rare ingredients.",
+  },
+  {
+    name: "Tavern",
+    coords: [1040, 1200],
+    desc: "Catch rumors, rest, or chat with travelers.",
+  },
 ];
 
-npcs.forEach(npc => {
-  L.marker([npc.y, npc.x])
+// Add markers
+locations.forEach(loc => {
+  L.marker(loc.coords)
     .addTo(map)
-    .bindPopup(`<b>${npc.name}</b><br>${npc.desc}`);
+    .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
 });
