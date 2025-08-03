@@ -114,7 +114,7 @@ const locations = [
   {
     name: "Royal Emporium NPCs",
     coords: [1311, 1106],
-    desc: "Oliver runs the Royal Emporium marketplace. Edmund Ironhand exchanges Capes and Tomes. Lavinia Dawnlight exchanges Mythical Relics.",
+    desc: "Oliver runs the Royal Emporium marketplace. Edmund Ironhand exchanges Capes and Tomes. Lavinia Dawnlight exchanges Mythical Relics. Gold Merchant exchanges Gold Dust for Gold Coins.",
     iconType: "npc",
   },
   {
@@ -163,8 +163,10 @@ locations.forEach(loc => {
   if (loc.iconType === "quest") iconToUse = questIcon;
 
   L.marker(loc.coords, iconToUse ? { icon: iconToUse } : {})
-    .addTo(map)
-    .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
+  .addTo(map)
+  .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`)
+  .getElement()
+  ?.classList.add('hoverable-marker');
 });
 
 
