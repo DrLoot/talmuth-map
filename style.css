@@ -9,6 +9,7 @@ html, body {
 
 /* Hover effect for ALL marker icons */
 .leaflet-marker-icon {
+  display: inline-block; /* <-- key fix */
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
@@ -17,4 +18,5 @@ html, body {
   filter: drop-shadow(0 0 6px #ffd700);
   cursor: pointer;
 }
+
 

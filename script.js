@@ -168,8 +168,6 @@ locations.forEach(loc => {
 });
 
 
-
-
 // Grid Coordinates Overlay
 map.on('click', function (e) {
   const x = Math.floor(e.latlng.lng);
