@@ -6,7 +6,7 @@ const map = L.map('map', {
 
 // Adjust based on your final image size
 const bounds = [[0, 0], [2048, 2048]];
-const image = L.imageOverlay('assets/talmuth-map.png', bounds).addTo(map);
+const image = L.imageOverlay('assets/map.png', bounds).addTo(map);
 map.fitBounds(bounds);
 
 // Add NPCs or Locations
