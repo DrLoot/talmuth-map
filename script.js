@@ -44,3 +44,12 @@ locations.forEach(loc => {
     .addTo(map)
     .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
 });
+// Grid Coordinates Overlay
+map.on('click', function (e) {
+  const x = Math.floor(e.latlng.lng);
+  const y = Math.floor(e.latlng.lat);
+  L.popup()
+    .setLatLng(e.latlng)
+    .setContent(`X: ${x}<br>Y: ${y}`)
+    .openOn(map);
+});
