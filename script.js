@@ -6,21 +6,21 @@ const map = L.map('map', {
 
 // Define custom icons
 const npcIcon = L.icon({
-  iconUrl: 'assets/icons/npc.png',
+  iconUrl: 'assets/npc.png',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
   popupAnchor: [0, -36],
 });
 
 const locationIcon = L.icon({
-  iconUrl: 'assets/icons/building.png',
+  iconUrl: 'assets/building.png',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
   popupAnchor: [0, -36],
 });
 
 const questIcon = L.icon({
-  iconUrl: 'assets/icons/quest.png',
+  iconUrl: 'assets/quest.png',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
   popupAnchor: [0, -36],
