@@ -13,27 +13,27 @@ map.fitBounds(bounds);
 const locations = [
   {
     name: "Guardian Arena",
-    coords: [1600, 530],
+    coords: [1759, 562],
     desc: "A mysterious gateway to elite challenges.",
   },
   {
     name: "Royal Emporium",
-    coords: [1210, 1110],
+    coords: [1287, 1060],
     desc: "Shop for gear, cosmetics, and tradeables.",
   },
   {
     name: "Engineering Bench",
-    coords: [830, 550],
+    coords: [959, 534],
     desc: "Craft gadgets and machines.",
   },
   {
     name: "Alchemy Table",
-    coords: [350, 1590],
+    coords: [367, 1558],
     desc: "Brew powerful potions using rare ingredients.",
   },
   {
     name: "Sword & Stein Tavern",
-    coords: [1110, 1310],
+    coords: [1155, 1348],
     desc: "Catch rumors, rest, or chat with travelers.",
   },
 ];
@@ -50,6 +50,6 @@ map.on('click', function (e) {
   const y = Math.floor(e.latlng.lat);
   L.popup()
     .setLatLng(e.latlng)
-    .setContent(`X: ${x}<br>Y: ${y}`)
+    .setContent(`Y: ${y}<br>X: ${x}`)
     .openOn(map);
 });
