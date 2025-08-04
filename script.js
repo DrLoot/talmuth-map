@@ -195,16 +195,18 @@ map.on('click', function (e) {
 
 const npcInventories = {
   orin: [
+    { name: "Shop:", desc: "" },
     { name: "30 Day Members Orb - 1,800 Luneri", desc: "Used for membership benefits." },
     { name: "60 Day Members Orb - 5,100 Luneri", desc: "Used for membership benefits." },
     { name: "90 Day Members Orb - 9,600 Luneri", desc: "Used for membership benefits." },
     { name: "180 Day Members Orb - 18,800 Luneri", desc: "Used for membership benefits." },
-    
-    { name: "Seal of Arthraxis (E) for 4x Valor Triad (E)", desc: "Artifact: 25% more weapon damage to Arthropods." },
-    { name: "Broodqueen's Oath (M) for 4x Valor Triad (M)", desc: "Staff: 15% chance to cause Poison." },
-    { name: "Eldergleam Vault (M) for 1x Valorbound Seal (M)", desc: "Container: Chance for Arcane Fragments (M) and (T)." },
-    { name: "Stormrazer (M) for 1x Valorbound Seal (M)", desc: "Longbow: 15% chance to cause Shock." },
-    { name: "Swiftmark Ring (M) for 4x Valor Triad (M)", desc: "Artifact: Ranged and Magic weapons have 12% increased attack speed and weapon damage." }
+    { name: "", desc: "" },
+    { name: "Exchange:", desc: "" },
+    { name: "Seal of Arthraxis (E) for 4x Valor Triad (E)", desc: "Artifact - 25% more weapon damage to Arthropods." },
+    { name: "Broodqueen's Oath (M) for 4x Valor Triad (M)", desc: "Staff - 15% chance to cause Poison." },
+    { name: "Eldergleam Vault (M) for 1x Valorbound Seal (M)", desc: "Container - Chance for Arcane Fragments (M) and (T)." },
+    { name: "Stormrazer (M) for 1x Valorbound Seal (M)", desc: "Longbow - 15% chance to cause Shock." },
+    { name: "Swiftmark Ring (M) for 4x Valor Triad (M)", desc: "Artifact - Ranged and Magic weapons have 12% increased attack speed and weapon damage." }
   ]
 };
 
