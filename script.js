@@ -120,8 +120,11 @@ const locations = [
   {
     name: "Orin Thalios NPC",
     coords: [1007, 1160],
-    desc: "Orin Thalios is a great, wise sage. He controls the Waygate and offers exchanges for Membership Orbs and Valor rewards for each season's Expedition.",
-    iconType: "npc",
+    desc: `
+    Orin Thalios is a great, wise sage. He controls the Waygate and offers exchanges for Membership Orbs and Valor rewards for each season's Expedition.<br><br>
+    <button class="inventory-btn" data-npc="orin">🧾 View Inventory</button>
+  `,
+    iconType: "npc"
   },
   {
     name: "Viola Nightbloom NPC",
@@ -189,3 +192,43 @@ map.on('click', function (e) {
     .setContent(`Y: ${y}<br>X: ${x}`)
     .openOn(map);
 });
+
+const npcInventories = {
+  orin: [
+    { name: "Membership Orb", desc: "Used for Waygate access." },
+    { name: "Valor Token", desc: "Tradeable for seasonal rewards." },
+    { name: "Scroll of Return", desc: "Teleports you back to town." }
+  ]
+};
+
+document.addEventListener("click", function (e) {
+  if (e.target.classList.contains("inventory-btn")) {
+    const npcKey = e.target.getAttribute("data-npc");
+    openInventoryModal(npcKey);
+  }
+
+  if (e.target.classList.contains("modal-close") || e.target.id === "inventoryModal") {
+    closeInventoryModal();
+  }
+});
+
+function openInventoryModal(npcKey) {
+  const modal = document.getElementById("inventoryModal");
+  const modalItems = document.getElementById("modalItems");
+  const modalTitle = document.getElementById("modalTitle");
+
+  const items = npcInventories[npcKey] || [];
+
+  modalTitle.textContent = `${npcKey.charAt(0).toUpperCase() + npcKey.slice(1)}'s Inventory`;
+
+  modalItems.innerHTML = items.map(item =>
+    `<div><strong>${item.name}</strong>: ${item.desc}</div>`
+  ).join("");
+
+  modal.style.display = "block";
+}
+
+function closeInventoryModal() {
+  document.getElementById("inventoryModal").style.display = "none";
+}
+
