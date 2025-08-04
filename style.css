@@ -32,15 +32,17 @@ html, body {
 }
 
 .modal-content {
-  max-width: 800px;
+  background-color: #1f1f1f;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
   width: 90%;
-  height: calc(100vh - 40px); /* full viewport minus a little padding */
+  max-width: 600px;
+  max-height: 90vh;
   overflow-y: auto;
-  background-color: #1e1e1e;
-  padding: 30px;
+  color: #fff;
   border-radius: 8px;
-  position: relative;
-  color: white;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
 }
 
 #map {
