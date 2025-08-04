@@ -230,9 +230,15 @@ function openInventoryModal(npcKey) {
 
   modalTitle.textContent = `${npcKey.charAt(0).toUpperCase() + npcKey.slice(1)}'s Inventory`;
 
-  modalItems.innerHTML = items.map(item =>
-    `<div><strong>${item.name}</strong>: ${item.desc}</div>`
-  ).join("");
+  modalItems.innerHTML = items.map(item => {
+    if (!item.name && !item.desc) {
+      return `<hr class="inventory-divider" />`; // line break
+    }
+    if (item.name && !item.desc) {
+      return `<h3 class="inventory-section">${item.name}</h3>`; // section title
+    }
+    return `<div class="inventory-item"><strong>${item.name}</strong><br><span>${item.desc}</span></div>`;
+  }).join("");
 
   modal.style.display = "block";
 }
