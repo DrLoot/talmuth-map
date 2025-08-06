@@ -5,6 +5,10 @@ const map = L.map('map', {
   zoomAnimation: false, // Prevent icon size changes
 });
 
+// Add a custom pane for fixed-size markers
+map.createPane('fixedMarkerPane');
+map.getPane('fixedMarkerPane').style.zIndex = 650; // Above tiles, below popups
+
 // Define custom icons
 const npcIcon = L.divIcon({
   className: 'custom-marker npc-marker',
@@ -181,7 +185,7 @@ locations.forEach(loc => {
 
   L.marker(loc.coords, {
     icon: iconToUse || locationIcon,
-    interactive: true
+    pane: 'fixedMarkerPane'
   })
     .addTo(map)
     .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);

@@ -19,6 +19,12 @@ body {
   cursor: pointer;
 }
 
+/* Prevent transforming icons */
+.leaflet-pane.leaflet-marker-pane,
+.leaflet-pane.fixedMarkerPane {
+  transform: none !important;
+}
+
 /* Inventory Modal styles*/
 
 .modal {
