@@ -2,7 +2,7 @@
 const map = L.map('map', {
   crs: L.CRS.Simple,
   minZoom: 2,         // lowest zoom level
-  maxZoom: 4,         // highest zoom level
+  maxZoom: 0,         // highest zoom level
   zoomSnap: 1,        // force integer zoom steps
   zoomDelta: 1,       // zoom increment per click/keyboard
   markerZoomAnimation: false,
