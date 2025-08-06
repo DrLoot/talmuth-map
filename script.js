@@ -4,12 +4,12 @@ const map = L.map('map', {
   minZoom: -1,
   zoomAnimation: false,
   markerZoomAnimation: false
-}); // :contentReference[oaicite:3]{index=3}
+}); 
 
 // Create a pane that lives under the #map container (not under the zoomable map pane)
 map.createPane('fixedMarkerPane', map.getContainer());
 const fixedPane = map.getPane('fixedMarkerPane');
-fixedPane.style.zIndex = 650; // :contentReference[oaicite:4]{index=4}
+fixedPane.style.zIndex = 650; 
 
 // Define custom icons
 const npcIcon = L.divIcon({
@@ -75,7 +75,7 @@ const locations = [
   { name: "Newbie Docks", coords: [527, 984], desc: "Where all new players start their new life in Talmuth.", iconType: "location" }
 ];
 
-// Place all markers into the fixed pane so they never scale :contentReference[oaicite:5]{index=5}
+// Place all markers into the fixed pane so they never scale
 locations.forEach(loc => {
   const iconToUse = loc.iconType === 'npc'
     ? npcIcon
