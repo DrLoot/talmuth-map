@@ -1,16 +1,23 @@
+// detect touch support
+const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
 // Initialize the map with no zoom-scaling of markers
 const map = L.map('map', {
-  crs: L.CRS.Simple,
-  minZoom: -1,         // lowest zoom level
-  maxZoom: 2,         // highest zoom level
-  zoomSnap: 1,        // force integer zoom steps
-  zoomDelta: 1,       // zoom increment per click/keyboard
+  crs: L.CRS.Simple,  
+  minZoom: -1,
+  maxZoom: 2,
+  zoomSnap:     isTouch ? 0 : 1,
+  zoomDelta:    isTouch ? 0.25 : 1,   // smaller increments on touch
+  scrollWheelZoom: !isTouch,          // wheel only on desktop
+  wheelDebounceTime: 40,
+  wheelPxPerZoomLevel: 240,
+  zoomAnimation: false,
   markerZoomAnimation: false,
-  zoomAnimation: false
+  touchZoom: true
 });
 
-
-// Create a pane that lives under the #map container (not under the zoomable map pane)
+// start fully zoomed out
+map.setView([1024, 1024], -1)
 
 // Define custom icons
 const npcIcon = L.divIcon({
