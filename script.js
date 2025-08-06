@@ -6,25 +6,26 @@ const map = L.map('map', {
 });
 
 // Define custom icons
-const npcIcon = L.icon({
-  iconUrl: 'assets/npc.png',
+const npcIcon = L.divIcon({
+  className: 'custom-marker npc-marker',
+  html: '<img src="assets/npc.png" alt="NPC" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
-  popupAnchor: [0, -36],
 });
 
-const locationIcon = L.icon({
-  iconUrl: 'assets/location.png',
+const locationIcon = L.divIcon({
+  className: 'custom-marker location-marker',
+  html: '<img src="assets/location.png" alt="Location" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
-  popupAnchor: [0, -36],
 });
 
-const questIcon = L.icon({
-  iconUrl: 'assets/quest.png',
+
+const questIcon = L.divIcon({
+  className: 'custom-marker quest-marker',
+  html: '<img src="assets/quest.png" alt="Quest" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
-  popupAnchor: [0, -36],
 });
 
 // Set up the background map image
@@ -180,11 +181,8 @@ locations.forEach(loc => {
 
   L.marker(loc.coords, {
     icon: iconToUse || locationIcon,
-    interactive: true,
-    pane: 'markerPane',
-    className: 'fixed-marker'
+    interactive: true
   })
-
     .addTo(map)
     .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
 

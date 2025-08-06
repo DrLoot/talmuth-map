@@ -106,3 +106,19 @@ body {
   transform: scale(1) !important;
   transform-origin: center !important;
 }
+
+/* Custom Marker formatting */
+.custom-marker img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.npc-marker img {
+  filter: drop-shadow(0 0 6px #00c3ff);
+}
+
+.location-marker img {
+  filter: drop-shadow(0 0 6px #ffd700);
+}
