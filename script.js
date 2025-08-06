@@ -1,8 +1,8 @@
 // Initialize the map with no zoom-scaling of markers
 const map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: 2,         // lowest zoom level
-  maxZoom: 0,         // highest zoom level
+  minZoom: -4,         // lowest zoom level
+  maxZoom: -1,         // highest zoom level
   zoomSnap: 1,        // force integer zoom steps
   zoomDelta: 1,       // zoom increment per click/keyboard
   markerZoomAnimation: false,
