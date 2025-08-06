@@ -2,6 +2,7 @@
 const map = L.map('map', {
   crs: L.CRS.Simple,
   minZoom: -1,
+  zoomAnimation: false, // Prevent icon size changes
 });
 
 // Define custom icons
@@ -177,73 +178,78 @@ locations.forEach(loc => {
   if (loc.iconType === "npc") iconToUse = npcIcon;
   if (loc.iconType === "quest") iconToUse = questIcon;
 
-  L.marker(loc.coords, iconToUse ? { icon: iconToUse } : {})
+  L.marker(loc.coords, {
+    icon: iconToUse || locationIcon,
+    interactive: true,
+    pane: 'markerPane'
+  })
     .addTo(map)
     .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
-});
 
 
-// Grid Coordinates Overlay
-map.on('click', function (e) {
-  const x = Math.floor(e.latlng.lng);
-  const y = Math.floor(e.latlng.lat);
-  L.popup()
-    .setLatLng(e.latlng)
-    .setContent(`Y: ${y}<br>X: ${x}`)
-    .openOn(map);
-});
+  // Grid Coordinates Overlay
+  map.on('click', function (e) {
+    const x = Math.floor(e.latlng.lng);
+    const y = Math.floor(e.latlng.lat);
+    L.popup()
+      .setLatLng(e.latlng)
+      .setContent(`Y: ${y}<br>X: ${x}`)
+      .openOn(map);
+  });
 
-const npcInventories = {
-  orin: [
-    { name: "Shop:"},
-    { name: "30 Day Members Orb - 1,800 Luneri", desc: "Used for membership benefits." },
-    { name: "60 Day Members Orb - 5,100 Luneri", desc: "Used for membership benefits." },
-    { name: "90 Day Members Orb - 9,600 Luneri", desc: "Used for membership benefits." },
-    { name: "180 Day Members Orb - 18,800 Luneri", desc: "Used for membership benefits." },
-    { name: ""},
-    { name: "Exchange:"},
-    { name: "Seal of Arthraxis (E) for 4x Valor Triad (E)", desc: "Artifact - 25% more weapon damage to Arthropods." },
-    { name: "Broodqueen's Oath (M) for 4x Valor Triad (M)", desc: "Staff - 15% chance to cause Poison." },
-    { name: "Eldergleam Vault (M) for 1x Valorbound Seal (M)", desc: "Container - Chance for Arcane Fragments (M) and (T)." },
-    { name: "Stormrazer (M) for 1x Valorbound Seal (M)", desc: "Longbow - 15% chance to cause Shock." },
-    { name: "Swiftmark Ring (M) for 4x Valor Triad (M)", desc: "Artifact - Ranged and Magic weapons have 12% increased attack speed and weapon damage." }
-  ]
-};
+  const npcInventories = {
+    orin: [
+      { name: "Shop:" },
+      { name: "30 Day Members Orb - 1,800 Luneri", desc: "Used for membership benefits." },
+      { name: "60 Day Members Orb - 5,100 Luneri", desc: "Used for membership benefits." },
+      { name: "90 Day Members Orb - 9,600 Luneri", desc: "Used for membership benefits." },
+      { name: "180 Day Members Orb - 18,800 Luneri", desc: "Used for membership benefits." },
+      { name: "" },
+      { name: "Exchange:" },
+      { name: "Seal of Arthraxis (E) for 4x Valor Triad (E)", desc: "Artifact - 25% more weapon damage to Arthropods." },
+      { name: "Broodqueen's Oath (M) for 4x Valor Triad (M)", desc: "Staff - 15% chance to cause Poison." },
+      { name: "Eldergleam Vault (M) for 1x Valorbound Seal (M)", desc: "Container - Chance for Arcane Fragments (M) and (T)." },
+      { name: "Stormrazer (M) for 1x Valorbound Seal (M)", desc: "Longbow - 15% chance to cause Shock." },
+      { name: "Swiftmark Ring (M) for 4x Valor Triad (M)", desc: "Artifact - Ranged and Magic weapons have 12% increased attack speed and weapon damage." }
+    ]
+  };
 
-document.addEventListener("click", function (e) {
-  if (e.target.classList.contains("inventory-btn")) {
-    const npcKey = e.target.getAttribute("data-npc");
-    openInventoryModal(npcKey);
+  document.addEventListener("click", function (e) {
+    if (e.target.classList.contains("inventory-btn")) {
+      const npcKey = e.target.getAttribute("data-npc");
+      openInventoryModal(npcKey);
+    }
+
+    if (e.target.classList.contains("modal-close") || e.target.id === "inventoryModal") {
+      closeInventoryModal();
+    }
+  });
+
+  function openInventoryModal(npcKey) {
+    document.body.style.overflow = 'hidden';
+    const modal = document.getElementById("inventoryModal");
+    const modalItems = document.getElementById("modalItems");
+    const modalTitle = document.getElementById("modalTitle");
+
+    const items = npcInventories[npcKey] || [];
+
+    modalTitle.textContent = `${npcKey.charAt(0).toUpperCase() + npcKey.slice(1)}'s Inventory`;
+
+    modalItems.innerHTML = items.map(item => {
+      if (!item.name && !item.desc) {
+        return `<hr class="inventory-divider" />`; // line break
+      }
+      if (item.name && !item.desc) {
+        return `<h3 class="inventory-section">${item.name}</h3>`; // section title
+      }
+      return `<div class="inventory-item"><strong>${item.name}</strong><br><span>${item.desc}</span></div>`;
+    }).join("");
+
+    modal.style.display = "block";
   }
 
-  if (e.target.classList.contains("modal-close") || e.target.id === "inventoryModal") {
-    closeInventoryModal();
+  function closeInventoryModal() {
+    document.body.style.overflow = '';
+    document.getElementById("inventoryModal").style.display = "none";
   }
-});
-
-function openInventoryModal(npcKey) {
-  const modal = document.getElementById("inventoryModal");
-  const modalItems = document.getElementById("modalItems");
-  const modalTitle = document.getElementById("modalTitle");
-
-  const items = npcInventories[npcKey] || [];
-
-  modalTitle.textContent = `${npcKey.charAt(0).toUpperCase() + npcKey.slice(1)}'s Inventory`;
-
-  modalItems.innerHTML = items.map(item => {
-    if (!item.name && !item.desc) {
-      return `<hr class="inventory-divider" />`; // line break
-    }
-    if (item.name && !item.desc) {
-      return `<h3 class="inventory-section">${item.name}</h3>`; // section title
-    }
-    return `<div class="inventory-item"><strong>${item.name}</strong><br><span>${item.desc}</span></div>`;
-  }).join("");
-
-  modal.style.display = "block";
-}
-
-function closeInventoryModal() {
-  document.getElementById("inventoryModal").style.display = "none";
-}
 
