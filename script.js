@@ -3,11 +3,11 @@ const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
 // Initialize the map with no zoom-scaling of markers
 const map = L.map('map', {
-  crs: L.CRS.Simple,  
+  crs: L.CRS.Simple,
   minZoom: -2,
   maxZoom: 2,
-  zoomSnap:     isTouch ? 0 : 1,
-  zoomDelta:    isTouch ? 0.25 : 1,   // smaller increments on touch
+  zoomSnap: isTouch ? 0 : 1,
+  zoomDelta: isTouch ? 0.25 : 1,   // smaller increments on touch
   scrollWheelZoom: !isTouch,          // wheel only on desktop
   wheelDebounceTime: 40,
   wheelPxPerZoomLevel: 240,
@@ -72,7 +72,13 @@ const locations = [
            <button class="inventory-btn" data-npc="orin">🧾 View Inventory</button>`,
     iconType: "npc"
   },
-  { name: "Viola Nightbloom NPC", coords: [839, 1104], desc: "Viola Nightbloom obsesses over Luneri and offers magical buffs to anyone that drops the crescent moon currency in her tip jar.", iconType: "npc" },
+  {
+    name: "Viola Nightbloom NPC",
+    coords: [839, 1104],
+    desc: `Viola Nightbloom obsesses over Luneri and offers magical buffs to anyone that drops the crescent moon currency in her tip jar.<br><br>
+           <button class="inventory-btn" data-npc="viola">🧾 View Inventory</button>`,
+    iconType: "npc"
+  },
   { name: "Salvage Captain Wren NPC", coords: [355, 1650], desc: "Salvage Captain Wren is an expert in the alchemical arts. She offers rewards for Arachnadon Fangs.", iconType: "npc" },
   { name: "Timberlord Thornsnap NPC", coords: [953, 608], desc: "Timberlord Thornsnap is a master engineer. He offers rewards in exchange for the rare Leafsong Resin.", iconType: "npc" },
   { name: "Fisherking Nautica NPC", coords: [1852, 1352], desc: "Fisherking Nautica is the king of fishing. He's on the lookout for Croakreaver Fins and will offer some nice rewards in exchange.", iconType: "npc" },
@@ -92,7 +98,7 @@ locations.forEach(loc => {
       : locationIcon;
 
   L.marker(loc.coords, {
-    icon: iconToUse,  
+    icon: iconToUse,
   })
     .addTo(map)
     .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
@@ -122,6 +128,10 @@ const npcInventories = {
     { name: "Broodqueen's Oath (M) for 4x Valor Triad (M)", desc: "Staff - 15% chance to cause Poison." },
     { name: "Eldergleam Vault (M) for 1x Valorbound Seal (M)", desc: "Container - Chance for Arcane Fragments (M) and (T)." },
     { name: "Stormrazer (M) for 1x Valorbound Seal (M)", desc: "Longbow - 15% chance to cause Shock." }
+  ],
+  viola: [
+    { name: "Character/Gathering/Production buff - 100 Luneri", desc: "Each buff provides a 5% experience gain." },
+    { name: "Colossus buff - 200 Luneri", desc: "Provides a 30% damage buff to any Colossus." },
   ]
 };
 
