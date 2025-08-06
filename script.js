@@ -79,7 +79,12 @@ const locations = [
            <button class="inventory-btn" data-npc="viola">🧾 View Inventory</button>`,
     iconType: "npc"
   },
-  { name: "Salvage Captain Wren NPC", coords: [355, 1650], desc: "Salvage Captain Wren is an expert in the alchemical arts. She offers rewards for Arachnadon Fangs.", iconType: "npc" },
+  { name: "Salvage Captain Wren NPC",
+    coords: [355, 1650], 
+    desc: `Salvage Captain Wren is an expert in the alchemical arts. She offers rewards for Arachnadon Fangs.<br><br>
+    <button class="inventory-btn" data-npc="wren">🧾 View Inventory</button>`,
+    iconType: "npc" 
+  },
   { name: "Timberlord Thornsnap NPC", coords: [953, 608], desc: "Timberlord Thornsnap is a master engineer. He offers rewards in exchange for the rare Leafsong Resin.", iconType: "npc" },
   { name: "Fisherking Nautica NPC", coords: [1852, 1352], desc: "Fisherking Nautica is the king of fishing. He's on the lookout for Croakreaver Fins and will offer some nice rewards in exchange.", iconType: "npc" },
   { name: "Quarrymaster Grimstone NPC", coords: [1369, 1612], desc: "Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.", iconType: "npc" },
@@ -131,7 +136,11 @@ const npcInventories = {
   ],
   viola: [
     { name: "Character/Gathering/Production buff - 100 Luneri", desc: "Each buff provides a 5% experience gain." },
-    { name: "Colossus buff - 200 Luneri", desc: "Provides a 30% damage buff to any Colossus." },
+    { name: "Colossus buff - 200 Luneri", desc: "Provides a 30% damage buff to any Colossus." }
+  ],
+  wren: [
+    { name: "20x Ancient Flask (U) for 2x Arcane Fragment (U)", desc: "Ancient Flasks are used in Alchemy." },
+    { name: "Wren's Trove (R) for 20x Arachnadon Fang (U).", desc: "Wren's Trove contains ??."}
   ]
 };
 
