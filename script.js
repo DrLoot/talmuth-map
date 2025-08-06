@@ -252,4 +252,4 @@ locations.forEach(loc => {
     document.body.style.overflow = '';
     document.getElementById("inventoryModal").style.display = "none";
   }
-
+})
