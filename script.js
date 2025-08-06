@@ -20,21 +20,21 @@ map.on('zoom', () => {
 // Define custom icons
 const npcIcon = L.divIcon({
   className: 'custom-marker npc-marker',
-  html: '<img src="/assets/npc.png" alt="NPC" />',
+  html: '<img src="assets/npc.png" alt="NPC" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
 });
 
 const locationIcon = L.divIcon({
   className: 'custom-marker location-marker',
-  html: '<img src="/assets/location.png" alt="Location" />',
+  html: '<img src="assets/location.png" alt="Location" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
 });
 
 const questIcon = L.divIcon({
   className: 'custom-marker quest-marker',
-  html: '<img src="/assets/quest.png" alt="Quest" />',
+  html: '<img src="assets/quest.png" alt="Quest" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
 });
@@ -83,17 +83,25 @@ const locations = [
 
 // Place all markers
 locations.forEach(loc => {
-  let iconToUse;
-  if (loc.iconType === "npc") iconToUse = npcIcon;
-  else if (loc.iconType === "quest") iconToUse = questIcon;
-  else iconToUse = locationIcon;
+  // pick the right icon…
+  let iconToUse = loc.iconType === 'npc'
+    ? npcIcon
+    : loc.iconType === 'quest'
+      ? questIcon
+      : locationIcon;
 
+  // create & add the marker:
   L.marker(loc.coords, {
     icon: iconToUse,
-    pane: 'fixedMarkerPane'
+    pane: 'fixedMarkerPane',
+
+    // <<< this tells Leaflet: “Don’t scale this icon on zoom”
+    zoomAnimation: false
   })
     .addTo(map)
-    .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
+    .bindPopup(
+      `<strong>${loc.name}</strong><br>${loc.desc}`
+    );
 });
 
 // Grid Coordinates on Click

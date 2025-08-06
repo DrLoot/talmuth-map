@@ -1,9 +1,10 @@
-html,
-body {
+/* Reset */
+html, body {
   height: 100%;
   margin: 0;
 }
 
+/* Map container */
 #map {
   height: 100vh;
   width: 100vw;
@@ -11,16 +12,10 @@ body {
 }
 
 /* =============================
-   🔥 ICON AND MARKER FIXES
+   🔥 MARKER STYLES
    ============================= */
 
-/* Prevent Leaflet from scaling markers */
-.leaflet-marker-icon,
-.leaflet-marker-shadow {
-  transform: none !important;
-  transition: none !important;
-  will-change: auto !important;
-}
+/* (Disable zoom-scaling in your JS by using `zoomAnimation: false` on each marker) */
 
 /* Glow on hover */
 .leaflet-marker-icon:hover,
@@ -29,14 +24,7 @@ body {
   cursor: pointer;
 }
 
-/* Custom Marker Images */
-.custom-marker img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  pointer-events: none;
-}
-
+/* Container for your <img> */
 .custom-marker {
   width: 36px;
   height: 36px;
@@ -45,11 +33,18 @@ body {
   justify-content: center;
 }
 
-/* Marker Types */
+/* The actual icon image */
+.custom-marker img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+/* Type-specific color glows */
 .npc-marker img {
   filter: drop-shadow(0 0 6px #00c3ff);
 }
-
 .location-marker img {
   filter: drop-shadow(0 0 6px #ffd700);
 }
@@ -61,10 +56,9 @@ body {
 .modal {
   display: none;
   position: fixed;
-  z-index: 10001;
-  /* Above map tiles */
-  left: 0;
+  z-index: 10001; /* above the map */
   top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
@@ -95,10 +89,6 @@ body {
   cursor: pointer;
 }
 
-.modal-close:hover {
-  color: #fff;
-}
-
 /* =============================
    🧾 INVENTORY MODAL CONTENT
    ============================= */
@@ -108,9 +98,9 @@ body {
   border: 1px solid #555;
   color: #fff;
   padding: 4px 8px;
-  cursor: pointer;
   font-size: 12px;
   border-radius: 4px;
+  cursor: pointer;
 }
 
 .inventory-btn:hover {
@@ -120,8 +110,7 @@ body {
 .inventory-section {
   color: #00c3ff;
   font-size: 16px;
-  margin-top: 14px;
-  margin-bottom: 6px;
+  margin: 14px 0 6px;
 }
 
 .inventory-divider {
