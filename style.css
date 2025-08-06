@@ -1,5 +1,4 @@
-html,
-body {
+html, body {
   height: 100%;
   margin: 0;
 }
@@ -7,31 +6,54 @@ body {
 #map {
   height: 100vh;
   width: 100vw;
+  z-index: 0;
 }
 
-/* Glow effect on all marker icons */
-.leaflet-marker-icon {
-  transition: filter 0.2s ease;
+/* =============================
+   🔥 ICON AND MARKER FIXES
+   ============================= */
+
+/* Prevent Leaflet from scaling markers */
+.leaflet-marker-icon,
+.leaflet-marker-shadow,
+.custom-marker {
+  transform: none !important;
+  transition: none !important;
+  will-change: auto !important;
 }
 
-.leaflet-marker-icon:hover {
+/* Glow on hover */
+.leaflet-marker-icon:hover,
+.custom-marker:hover {
   filter: drop-shadow(0 0 6px #ffd700);
   cursor: pointer;
 }
 
-/* Prevent transforming icons */
-.leaflet-pane.leaflet-marker-pane,
-.leaflet-pane.fixedMarkerPane {
-  transform: none !important;
+/* Custom Marker Images */
+.custom-marker img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  pointer-events: none;
 }
 
-/* Inventory Modal styles*/
+/* Marker Types */
+.npc-marker img {
+  filter: drop-shadow(0 0 6px #00c3ff);
+}
+
+.location-marker img {
+  filter: drop-shadow(0 0 6px #ffd700);
+}
+
+/* =============================
+   📦 MODAL STYLES
+   ============================= */
 
 .modal {
   display: none;
   position: fixed;
-  z-index: 10001;
-  /* Higher than map layers */
+  z-index: 10001; /* Above map tiles */
   left: 0;
   top: 0;
   width: 100%;
@@ -48,17 +70,11 @@ body {
   width: 90%;
   max-width: 500px;
   max-height: 60vh;
-  /* Restrict height */
   overflow-y: auto;
   color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
   position: relative;
-}
-
-
-#map {
-  z-index: 0;
 }
 
 .modal-close {
@@ -73,6 +89,10 @@ body {
 .modal-close:hover {
   color: #fff;
 }
+
+/* =============================
+   🧾 INVENTORY MODAL CONTENT
+   ============================= */
 
 .inventory-btn {
   background: #222;
@@ -105,26 +125,4 @@ body {
 .inventory-item {
   margin-bottom: 10px;
   line-height: 1.4;
-}
-
-/* Prevent zoom scaling of markers */
-.fixed-marker {
-  transform: scale(1) !important;
-  transform-origin: center !important;
-}
-
-/* Custom Marker formatting */
-.custom-marker img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  pointer-events: none;
-}
-
-.npc-marker img {
-  filter: drop-shadow(0 0 6px #00c3ff);
-}
-
-.location-marker img {
-  filter: drop-shadow(0 0 6px #ffd700);
 }
