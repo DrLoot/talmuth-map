@@ -4,7 +4,7 @@ const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 // Initialize the map with no zoom-scaling of markers
 const map = L.map('map', {
   crs: L.CRS.Simple,  
-  minZoom: -1,
+  minZoom: -2,
   maxZoom: 2,
   zoomSnap:     isTouch ? 0 : 1,
   zoomDelta:    isTouch ? 0.25 : 1,   // smaller increments on touch
@@ -17,7 +17,7 @@ const map = L.map('map', {
 });
 
 // start fully zoomed out
-map.setView([1024, 1024], -1)
+map.setView([1024, 1024], -2)
 
 // Define custom icons
 const npcIcon = L.divIcon({
