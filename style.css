@@ -15,8 +15,7 @@ html, body {
 
 /* Prevent Leaflet from scaling markers */
 .leaflet-marker-icon,
-.leaflet-marker-shadow,
-.custom-marker {
+.leaflet-marker-shadow {
   transform: none !important;
   transition: none !important;
   will-change: auto !important;
