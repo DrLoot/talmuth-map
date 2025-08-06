@@ -1,20 +1,24 @@
 // Initialize the map with no zoom-scaling of markers
 const map = L.map('map', {
   crs: L.CRS.Simple,
-  minZoom: -1,
-  zoomAnimation: false,
-  markerZoomAnimation: false
-}); 
+  minZoom: 0,         // lowest zoom level
+  maxZoom: 2,         // highest zoom level
+  zoomSnap: 1,        // force integer zoom steps
+  zoomDelta: 1,       // zoom increment per click/keyboard
+  markerZoomAnimation: false,
+  zoomAnimation: false
+});
+
 
 // Create a pane that lives under the #map container (not under the zoomable map pane)
 map.createPane('fixedMarkerPane', map.getContainer());
 const fixedPane = map.getPane('fixedMarkerPane');
-fixedPane.style.zIndex = 650; 
+fixedPane.style.zIndex = 650;
 
 // Define custom icons
 const npcIcon = L.divIcon({
   className: 'custom-marker npc-marker',
-  html: '<img src="assets/npc.png" alt="NPC">',  
+  html: '<img src="assets/npc.png" alt="NPC">',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
 });
