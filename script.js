@@ -14,7 +14,7 @@ const npcIcon = L.icon({
 });
 
 const locationIcon = L.icon({
-  iconUrl: 'assets/building.png',
+  iconUrl: 'assets/location.png',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
   popupAnchor: [0, -36],
@@ -181,8 +181,10 @@ locations.forEach(loc => {
   L.marker(loc.coords, {
     icon: iconToUse || locationIcon,
     interactive: true,
-    pane: 'markerPane'
+    pane: 'markerPane',
+    className: 'fixed-marker'
   })
+
     .addTo(map)
     .bindPopup(`<strong>${loc.name}</strong><br>${loc.desc}`);
 
