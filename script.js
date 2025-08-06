@@ -20,21 +20,21 @@ map.on('zoom', () => {
 // Define custom icons
 const npcIcon = L.divIcon({
   className: 'custom-marker npc-marker',
-  html: '<img src="assets/npc.png" alt="NPC" />',
+  html: '<img src="talmuth-map/assets/npc.png" alt="NPC" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
 });
 
 const locationIcon = L.divIcon({
   className: 'custom-marker location-marker',
-  html: '<img src="assets/location.png" alt="Location" />',
+  html: '<img src="talmuth-map/assets/location.png" alt="Location" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
 });
 
 const questIcon = L.divIcon({
   className: 'custom-marker quest-marker',
-  html: '<img src="assets/quest.png" alt="Quest" />',
+  html: '<img src="talmuth-map/assets/quest.png" alt="Quest" />',
   iconSize: [36, 36],
   iconAnchor: [18, 36],
 });
