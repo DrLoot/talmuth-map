@@ -89,12 +89,23 @@ const locations = [
   {
     name: "Timberlord Thornsnap NPC",
     coords: [953, 608],
-    desc: `Timberlord Thornsnap is a master engineer. He offers rewards in exchange for the rare Leafsong Resin.,
+    desc: `Timberlord Thornsnap is a master engineer. He offers rewards in exchange for the rare Leafsong Resin.<br><br>
     <button class="inventory-btn" data-npc="timber">🧾 View Inventory</button>`,
     iconType: "npc"
   },
-  { name: "Fisherking Nautica NPC", coords: [1852, 1352], desc: "Fisherking Nautica is the king of fishing. He's on the lookout for Croakreaver Fins and will offer some nice rewards in exchange.", iconType: "npc" },
-  { name: "Quarrymaster Grimstone NPC", coords: [1369, 1612], desc: "Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.", iconType: "npc" },
+  { name: "Fisherking Nautica NPC",
+    coords: [1852, 1352],
+    desc: `Fisherking Nautica is the king of fishing. He's on the lookout for Croakreaver Fins and will offer some nice rewards in exchange.<br><br>
+    <button class="inventory-btn" data-npc="nautica">🧾 View Inventory</button>`,
+     iconType: "npc"
+  },
+
+  { name: "Quarrymaster Grimstone NPC",
+    coords: [1369, 1612], 
+    desc: `Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.<br><br> 
+    <button class="inventory-btn" data-npc="grim">🧾 View Inventory</button>`,
+    iconType: "npc"
+  },    
 
   // Exits / Zones
   { name: "Emera Crossing", coords: [1896, 1764], desc: "Exit to Emera Crossing zone.", iconType: "location" },
