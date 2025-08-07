@@ -90,7 +90,7 @@ const locations = [
     name: "Timberlord Thornsnap NPC",
     coords: [953, 608],
     desc: `Timberlord Thornsnap is a master engineer. He offers rewards in exchange for the rare Leafsong Resin.<br><br>
-    <button class="inventory-btn" data-npc="timber">🧾 View Inventory</button>`,
+    <button class="inventory-btn" data-npc="thornsnap">🧾 View Inventory</button>`,
     iconType: "npc"
   },
   { name: "Fisherking Nautica NPC",
@@ -103,7 +103,7 @@ const locations = [
   { name: "Quarrymaster Grimstone NPC",
     coords: [1369, 1612], 
     desc: `Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.<br><br> 
-    <button class="inventory-btn" data-npc="grim">🧾 View Inventory</button>`,
+    <button class="inventory-btn" data-npc="grimstone">🧾 View Inventory</button>`,
     iconType: "npc"
   },    
 
@@ -160,10 +160,10 @@ const npcInventories = {
     { name: "20x Ancient Flask (U) for 2x Arcane Fragment (U)", desc: "Ancient Flasks are used in Alchemy." },
     { name: "Wren's Trove (R) for 20x Arachnadon Fang (U).", desc: "Wren's Trove has a chance to reward a variety of potions, gold, Greater Tome of Scavenging, and a Scavenger's Lens which has a chance to provide 20% Scavenging Experience." }
   ],
-  timber: [
+  thornsnap: [
     { name: "Thornsap Coffer (R) for 20x Leafsong Resin (U).", desc: "Thornsnap Coffer has a chance to reward a variety of tools, gold, Greater Tome of Woodcutting, and a Sylvan Grip which has a chance to provide 20% Woodcutting Experience."}
   ],
-  grim: [
+  grimstone: [
     { name: "Grimstone Cache (R) for 20x Stoneheart Shard (U).", desc: "Grimstone Cache has a chance to reward a variety of armors, gold, Greater Tome of Mining, and a Miner's Hat which has a chance to provide 20% Mining Experience."}
   ],
   nautica: [
