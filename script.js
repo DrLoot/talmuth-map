@@ -60,9 +60,30 @@ const locations = [
 
   // NPCs
   {
-    name: "Royal Emporium NPCs",
-    coords: [1311, 1106],
-    desc: "Oliver runs the Royal Emporium marketplace. Edmund Ironhand exchanges Capes and Tomes. Lavinia Dawnlight exchanges Mythical Relics. Gold Merchant exchanges Gold Dust for Gold Coins.",
+    name: "Oliver Greenfield",
+    coords: [1254, 1072],
+    desc: "Oliver Greenfield runs the Royal Emporium marketplace inside the Royal Emporium.",
+    iconType: "npc"
+  },
+  {
+    name: "Gold Merchant",
+    coords: [1318, 1029],
+    desc: `The Gold Merchant is located inside the Royal Emporium and offers gold dust exchange.<br><br>
+               <button class="inventory-btn" data-npc="goldmerchant">🧾 View Inventory</button>`,
+    iconType: "npc"
+  },
+  {
+    name: "Edmund Ironhand",
+    coords: [1367, 1031],
+    desc: `Edmund Ironhand is located inside the Royal Emporium and offers a variety of Capes and Tomes.<br><br>
+               <button class="inventory-btn" data-npc="edmund">🧾 View Inventory</button>`,
+    iconType: "npc"
+  },
+  {
+    name: "Lavinia Dawnlight",
+    coords: [1368, 1063],
+    desc: `Lavinia Dawnlight is located inside the Royal Emporium and offers some Relic exchanges and upgrades.<br><br>
+               <button class="inventory-btn" data-npc="lavinia">🧾 View Inventory</button>`,
     iconType: "npc"
   },
   {
@@ -93,23 +114,25 @@ const locations = [
     <button class="inventory-btn" data-npc="thornsnap">🧾 View Inventory</button>`,
     iconType: "npc"
   },
-  { name: "Fisherking Nautica NPC",
+  {
+    name: "Fisherking Nautica NPC",
     coords: [1852, 1352],
     desc: `Fisherking Nautica is the king of fishing. He's on the lookout for Croakreaver Fins and will offer some nice rewards in exchange.<br><br>
     <button class="inventory-btn" data-npc="nautica">🧾 View Inventory</button>`,
-     iconType: "npc"
+    iconType: "npc"
   },
 
-  { name: "Quarrymaster Grimstone NPC",
-    coords: [1369, 1612], 
+  {
+    name: "Quarrymaster Grimstone NPC",
+    coords: [1369, 1612],
     desc: `Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.<br><br> 
     <button class="inventory-btn" data-npc="grimstone">🧾 View Inventory</button>`,
     iconType: "npc"
-  },    
+  },
 
   // Exits / Zones
-  { name: "Emera Crossing", coords: [1896, 1764], desc: "Exit to Emera Crossing zone.", iconType: "location" },
-  { name: "Newbie Docks", coords: [527, 984], desc: "Where all new players start their new life in Talmuth.", iconType: "location" }
+  { name: "Emera Crossing", coords: [1896, 1764], desc: "Exit to Emera Crossing zone. Unlocked after completing The Miner's Passage Quest. Quest becomes available at level 24.", iconType: "location" },
+  { name: "Newbie Docks", coords: [527, 984], desc: "Where all new players start their adventure!", iconType: "location" }
 ];
 
 // Place all markers into the fixed pane so they never scale
@@ -161,16 +184,43 @@ const npcInventories = {
     { name: "Wren's Trove (R) for 20x Arachnadon Fang (U).", desc: "Wren's Trove has a chance to reward a variety of potions, gold, Greater Tome of Scavenging, and a Scavenger's Lens which has a chance to provide 20% Scavenging Experience." }
   ],
   thornsnap: [
-    { name: "Thornsap Coffer (R) for 20x Leafsong Resin (U).", desc: "Thornsnap Coffer has a chance to reward a variety of tools, gold, Greater Tome of Woodcutting, and a Sylvan Grip which has a chance to provide 20% Woodcutting Experience."}
+    { name: "Thornsap Coffer (R) for 20x Leafsong Resin (U).", desc: "Thornsnap Coffer has a chance to reward a variety of tools, gold, Greater Tome of Woodcutting, and a Sylvan Grip which has a chance to provide 20% Woodcutting Experience." }
   ],
   grimstone: [
-    { name: "Grimstone Cache (R) for 20x Stoneheart Shard (U).", desc: "Grimstone Cache has a chance to reward a variety of armors, gold, Greater Tome of Mining, and a Miner's Hat which has a chance to provide 20% Mining Experience."}
+    { name: "Grimstone Cache (R) for 20x Stoneheart Shard (U).", desc: "Grimstone Cache has a chance to reward a variety of armors, gold, Greater Tome of Mining, and a Miner's Hat which has a chance to provide 20% Mining Experience." }
   ],
   nautica: [
-    { name: "Mystic Kraken Ink (M) for 5,000,000 Gold.", desc: "A part needed to craft the Abyssal Dominator."},
-    { name: "Nautica's Strongbox (R) for 20x Croakrever Fin (U).", desc: "Nautica's Strongbox has a chance to reward a variety of cooked fish, gold, Greater Tome of Fishing, and a Fisherman's Friend which has a chance to provide 20% Fishing Experience."}
-
-  ] 
+    { name: "Mystic Kraken Ink (M) for 5,000,000 Gold.", desc: "Mystic Kraken Ink (M) is a part needed to craft the Abyssal Dominator." },
+    { name: "Nautica's Strongbox (R) for 20x Croakrever Fin (U).", desc: "Nautica's Strongbox has a chance to reward a variety of cooked fish, gold, Greater Tome of Fishing, and a Fisherman's Friend which has a chance to provide 20% Fishing Experience." }
+  ],
+  goldmerchant: [
+    { name: "Small Coin Pouch (U) for Gold Dust (R).", desc: "A small pouch, stuffed with golden coins, what else could a wandering adventurer ask for?" }
+  ],
+  edmund: [
+    { name: "Capes:" },
+    { name: "Paragon's Cape of Combat (T) for 5000x Malignant Cores (R).", desc: "Requires Adventure Level 120. Stitched from the banners of vanquished foes and lined with the hides of monsters, this cape is a testament to unmatched martial prowess." },
+    { name: "Paragon's Cape of Fishing (T) for 5000x Nature's Core (R).", desc: "Requires Fishing Level 120. Woven from the scales of mythical sea beasts and imbued with the essence of the ocean's tides, this cape carries the scent of salt and the whisper of ancient waves." },
+    { name: "Paragon's Cape of Mining (T) for 5000x Nature's Core (R).", desc: "Requires Mining Level 120. Forged from the dust of shattered mountains and threaded with veins of purest Lunarite, this cape marks the wearer as a master of the underground realms." },
+    { name: "Paragon's Cape of Scavenging (T) for 5000x Nature's Core (R).", desc: "Requires Scavenging Level 120. Crafted from remnants of forgotten treasures and enchanted to glimmer with the light of bygone ages, this cape celebrates those who can see value where others see ruin." },
+    { name: "Paragon's Cape of Woodcutting (T) for 5000x Nature's Core (R).", desc: "Requires Woodcutting Level 120. Fashioned from leaves of the Eternal Grove and threads of living bark, this cape is a living tribute to the forests." },
+    { name: "" },
+    { name: "Tomes:" },
+    { name: "Greater Tome of Combat (E) for 10x Malignant Cores (R).", desc: "Consume to receive a large amount of Adventure XP." },
+    { name: "Tome of Combat (R) for 3x Malignant Cores (R).", desc: "Consume to receive a small amount Adventure XP." },
+    { name: "Greater Gathering Tomes of Combat (E) for 20x Nature's Core (R).", desc: "Your choice of any gathering skill. Consume to receive a large amount of XP in the chosen skill." },
+    { name: "Tomes of Gathering (E) for 7x Nature's Core (R).", desc: "Your choice of any gathering skill. Consume to receive a small amount of XP in the chosen skill." }
+  ],
+  lavinia: [
+    { name: "Exchange:" },
+    { name: "Abyssal Dominator (M) for Deepwater Pearl (M) and Luminous Coral Shard (M) and Mystic Kraken Ink (M) and Shadowed Leviathan Scale (M).", desc: "Artifact - +12% melee, ranged and magic weapon damage."},
+    { name: "Cartographer's Compass (M) for Cartographer's Compass Casing (M) and Cartographer's Compass Core (M) and Cartographer's Compass Face (M) and Cartographer's Compass Needle (M).", desc: "Artifact - Reveals the entire map and regenerates +8 energy every second up to 5000 energy."},
+    { name: "Titan Takedown (L) for Celestial Alloy Ingot (L) and Guardian's Essence Shard (L) and Guardian's Rune Stone (L).", desc: "Artifact - 40% increased weapon damage to Guardians."},
+    { name: "" },
+    { name: "Upgrades:" },
+    { name: "Randomly receive Empowered Abyssal Dominator (M) or Supreme Abyssal Dominator (T) for 2x Abyssal Dominator (M).", desc: "Chance - 90% for Empowered, 10% for Supreme."},
+    { name: "Randomly receive Empowered Moonlit Valor (L) or Supreme Moonlit Valor (M) for 3x Moonlit Valor (L).", desc: "Chance - 90% for Empowered, 10% for Supreme."},
+    { name: "Randomly receive Empowered Titan Takedown (L) or Supreme Titan Takedown (M) for 3x Titan Takedown (L).", desc: "Chance - 90% for Empowered, 10% for Supreme."}
+  ]
 };
 
 document.addEventListener("click", e => {
