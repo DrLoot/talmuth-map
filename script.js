@@ -46,12 +46,12 @@ map.fitBounds(bounds);
 
 // Your location data
 const locations = [
-  { name: "Oliver Greenfield", coords: [1614, 305], desc: "Oliver also flips homes! Unlock Talmuth Homeowner for 2x Arcane Fragment (E), 2x Arcane Fragment (L), 1,000,000 Gold", iconType: "location" },
+  { name: "Flour Mill", coords: [353, 1721], desc: "The Flour Mill provides 20 bags of flour that can be used in certain cooking recipes. Bags of flour respawn periodically.", iconType: "location" },
   { name: "Guardian Arena", coords: [1759, 562], desc: "A mysterious gateway to elite challenges.", iconType: "location" },
   { name: "Royal Emporium", coords: [1287, 1060], desc: "Shop for Lost Relics, Collectibles, gear, cosmetics, and many other tradeables.", iconType: "location" },
   { name: "Engineering Bench", coords: [959, 534], desc: "Craft weapons and tools.", iconType: "location" },
   { name: "Alchemy Table", coords: [367, 1558], desc: "Brew powerful potions.", iconType: "location" },
-  { name: "Sword & Stein Tavern", coords: [1155, 1348], desc: "Catch rumors, rest, or chat with travelers.", iconType: "location" },
+  { name: "Sword & Stein Tavern", coords: [1155, 1348], desc: "1st Floor: Purchase daily drawing lottery tickets, purchase supplies from the bartender, and purchase Valor contracts from Valor Contractor.<br><br>Basement: A crusher is used to crush bones and runes.<br><br>2nd Floor: Spinning Wheel to make bowstrings, Dreamscapemancer NPC to access Dreamscape, Armor Assembly Stand, rift to Cavern of Paths, and a player's stash.", iconType: "location" },
   { name: "Altar", coords: [281, 706], desc: "Mysterious magical altar infused with magic from the old world.", iconType: "location" },
   { name: "Player Housing", coords: [1645, 115], desc: "Home Sweet Home. Collectible cosmetics can be used to change the style of your house.<br><br>Purchasing a home unlocks all production stations and the Tanning Table on your property.", iconType: "location" },
   { name: "Anvil, Furnace, and Arcane Fuser", coords: [1315, 1566], desc: "Anvil and Furnace are hot and ready for all your Forging needs. The Arcane Fuser is used to exchange Arcane Fragments.", iconType: "location" },
@@ -60,10 +60,26 @@ const locations = [
   { name: "Cavern of Paths", coords: [1961, 327], desc: "All adventures from Common to Transcendent. The enemies are waiting!", iconType: "location" },
 
   // NPCs
+  { name: "Enjinious Blocksmith", coords: [1433, 1200], desc: "Enjinious Blocksmith runs the Enjin Multiverse Event Leaderboards. He'll reward you with a Multiverse Mystery Box in exchange for 2 Multiverse Medallions.", iconType: "npc" },
+  { name: "Oliver Greenfield", coords: [1614, 305], desc: "Oliver also flips homes! Unlock Talmuth Homeowner for 2x Arcane Fragment (E), 2x Arcane Fragment (L), 1,000,000 Gold.", iconType: "npc" },
   {
     name: "Oliver Greenfield",
     coords: [1254, 1072],
     desc: "Oliver Greenfield runs the Royal Emporium marketplace inside the Royal Emporium.",
+    iconType: "npc"
+  },
+  {
+    name: "Seraphina the Bartender",
+    coords: [1205, 1334],
+    desc: `Seraphina had to close down her General Store, but a timely job opening as a bartender was the perfect new job!<br><br>
+               <button class="inventory-btn" data-npc="seraphina">🧾 View Inventory</button>`,
+    iconType: "npc"
+  },
+  {
+    name: "Valor Contract Guy",
+    coords: [1164, 1397],
+    desc: `Valor Contract Guy exhanges his highly sought-after Valor contracts for Arcane Fragments and Valor Tokens.<br><br>
+               <button class="inventory-btn" data-npc="valor">🧾 View Inventory</button>`,
     iconType: "npc"
   },
   {
@@ -211,16 +227,32 @@ const npcInventories = {
     { name: "Greater Gathering Tomes of Combat (E) for 20x Nature's Core (R).", desc: "Your choice of any gathering skill. Consume to receive a large amount of XP in the chosen skill." },
     { name: "Tomes of Gathering (E) for 7x Nature's Core (R).", desc: "Your choice of any gathering skill. Consume to receive a small amount of XP in the chosen skill." }
   ],
+  seraphina: [
+    { name: "Large Flask (C) - 50 Gold.", desc: "Alchemy item." },
+    { name: "Medium Flask (C) - 50 Gold.", desc: "Alchemy item." },
+    { name: "Vial (C) - 50 Gold.", desc: "Alchemy item." },
+    { name: "Holy Grey Ale (U) - 1,000 Gold.", desc: "Alchemy item." },
+    { name: "Flask of Mead (C) - 30 Gold.", desc: "Alchemy and Cooking item." },
+    { name: "Jug of Water (C) - 25 Gold.", desc: "Engineering and Cooking item." }
+  ],
+  valor: [
+    { name: "Bronze Valor Contract (E) - 3x Arcane Fragment (U).", desc: "Rewards a random easy bounty contract." },
+    { name: "Bronze Valor Contract (E) - 15x Valor Token (L).", desc: "Rewards a random easy bounty contract." },
+    { name: "Silver Valor Contract (E) - 3x Arcane Fragment (U).", desc: "Rewards a random medium bounty contract." },
+    { name: "Silver Valor Contract (E) - 30x Valor Token (L).", desc: "Rewards a random medium bounty contract." },
+    { name: "Gold Valor Contract (E) - 3x Arcane Fragment (U).", desc: "Rewards a random hard bounty contract." },
+    { name: "Gold Valor Contract (E) - 60x Valor Token (L).", desc: "Rewards a random hard bounty contract." },
+  ],
   lavinia: [
     { name: "Exchange:" },
-    { name: "Abyssal Dominator (M) for Deepwater Pearl (M) and Luminous Coral Shard (M) and Mystic Kraken Ink (M) and Shadowed Leviathan Scale (M).", desc: "Artifact - +12% melee, ranged and magic weapon damage."},
-    { name: "Cartographer's Compass (M) for Cartographer's Compass Casing (M) and Cartographer's Compass Core (M) and Cartographer's Compass Face (M) and Cartographer's Compass Needle (M).", desc: "Artifact - Reveals the entire map and regenerates +8 energy every second up to 5000 energy."},
-    { name: "Titan Takedown (L) for Celestial Alloy Ingot (L) and Guardian's Essence Shard (L) and Guardian's Rune Stone (L).", desc: "Artifact - 40% increased weapon damage to Guardians."},
+    { name: "Abyssal Dominator (M) for Deepwater Pearl (M) and Luminous Coral Shard (M) and Mystic Kraken Ink (M) and Shadowed Leviathan Scale (M).", desc: "Artifact - +12% melee, ranged and magic weapon damage." },
+    { name: "Cartographer's Compass (M) for Cartographer's Compass Casing (M) and Cartographer's Compass Core (M) and Cartographer's Compass Face (M) and Cartographer's Compass Needle (M).", desc: "Artifact - Reveals the entire map and regenerates +8 energy every second up to 5000 energy." },
+    { name: "Titan Takedown (L) for Celestial Alloy Ingot (L) and Guardian's Essence Shard (L) and Guardian's Rune Stone (L).", desc: "Artifact - 40% increased weapon damage to Guardians." },
     { name: "" },
     { name: "Upgrades:" },
-    { name: "Randomly receive Empowered Abyssal Dominator (M) or Supreme Abyssal Dominator (T) for 2x Abyssal Dominator (M).", desc: "Chance - 90% for Empowered, 10% for Supreme."},
-    { name: "Randomly receive Empowered Moonlit Valor (L) or Supreme Moonlit Valor (M) for 3x Moonlit Valor (L).", desc: "Chance - 90% for Empowered, 10% for Supreme."},
-    { name: "Randomly receive Empowered Titan Takedown (L) or Supreme Titan Takedown (M) for 3x Titan Takedown (L).", desc: "Chance - 90% for Empowered, 10% for Supreme."}
+    { name: "Randomly receive Empowered Abyssal Dominator (M) or Supreme Abyssal Dominator (T) for 2x Abyssal Dominator (M).", desc: "Chance - 90% for Empowered, 10% for Supreme." },
+    { name: "Randomly receive Empowered Moonlit Valor (L) or Supreme Moonlit Valor (M) for 3x Moonlit Valor (L).", desc: "Chance - 90% for Empowered, 10% for Supreme." },
+    { name: "Randomly receive Empowered Titan Takedown (L) or Supreme Titan Takedown (M) for 3x Titan Takedown (L).", desc: "Chance - 90% for Empowered, 10% for Supreme." }
   ]
 };
 
