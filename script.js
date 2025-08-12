@@ -46,13 +46,14 @@ map.fitBounds(bounds);
 
 // Your location data
 const locations = [
+  { name: "Oliver Greenfield", coords: [1614, 305], desc: "Oliver also flips homes! Unlock Talmuth Homeowner for 2x Arcane Fragment (E), 2x Arcane Fragment (L), 1,000,000 Gold", iconType: "location" },
   { name: "Guardian Arena", coords: [1759, 562], desc: "A mysterious gateway to elite challenges.", iconType: "location" },
   { name: "Royal Emporium", coords: [1287, 1060], desc: "Shop for Lost Relics, Collectibles, gear, cosmetics, and many other tradeables.", iconType: "location" },
   { name: "Engineering Bench", coords: [959, 534], desc: "Craft weapons and tools.", iconType: "location" },
   { name: "Alchemy Table", coords: [367, 1558], desc: "Brew powerful potions.", iconType: "location" },
   { name: "Sword & Stein Tavern", coords: [1155, 1348], desc: "Catch rumors, rest, or chat with travelers.", iconType: "location" },
   { name: "Altar", coords: [281, 706], desc: "Mysterious magical altar infused with magic from the old world.", iconType: "location" },
-  { name: "Player Housing", coords: [1645, 115], desc: "Home Sweet Home.", iconType: "location" },
+  { name: "Player Housing", coords: [1645, 115], desc: "Home Sweet Home. Collectible cosmetics can be used to change the style of your house.<br><br>Purchasing a home unlocks all production stations and the Tanning Table on your property.", iconType: "location" },
   { name: "Anvil, Furnace, and Arcane Fuser", coords: [1315, 1566], desc: "Anvil and Furnace are hot and ready for all your Forging needs. The Arcane Fuser is used to exchange Arcane Fragments.", iconType: "location" },
   { name: "Stove", coords: [1897, 1316], desc: "A public place for Cooking.", iconType: "location" },
   { name: "Terror Descent", coords: [1929, 840], desc: "Do you dare enter the 4 levels of the Terror Descent dungeon?", iconType: "location" },
