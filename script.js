@@ -83,10 +83,10 @@ const locations = [
     iconType: "npc"
   },
   {
-    name: "Gold Merchant",
+    name: "Currency Merchant",
     coords: [1318, 1029],
-    desc: `The Gold Merchant is located inside the Royal Emporium and offers gold dust exchange.<br><br>
-               <button class="inventory-btn" data-npc="goldmerchant">🧾 View Inventory</button>`,
+    desc: `The Currency Merchant is located inside the Royal Emporium and offers gold and Luneri exchanges.<br><br>
+               <button class="inventory-btn" data-npc="currencymerchant">🧾 View Inventory</button>`,
     iconType: "npc"
   },
   {
@@ -210,7 +210,7 @@ const npcInventories = {
     { name: "Mystic Kraken Ink (M) for 5,000,000 Gold.", desc: "Mystic Kraken Ink (M) is a part needed to craft the Abyssal Dominator." },
     { name: "Nautica's Strongbox (R) for 20x Croakrever Fin (U).", desc: "Nautica's Strongbox has a chance to reward a variety of cooked fish, gold, Greater Tome of Fishing, and a Fisherman's Friend which has a chance to provide 20% Fishing Experience." }
   ],
-  goldmerchant: [
+  currencymerchant: [
     { name: "Small Coin Pouch (U) for Gold Dust (R).", desc: "A small pouch, stuffed with golden coins, what else could a wandering adventurer ask for?" },
     { name: "Luneri Bond (E) for 100 Luneri.", desc: "A bond that contains 100 Luneri." }
   ],
