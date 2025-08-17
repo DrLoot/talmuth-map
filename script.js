@@ -47,7 +47,7 @@ map.fitBounds(bounds);
 // Your location data
 const locations = [
   { name: "Flour Mill", coords: [353, 1721], desc: "The Flour Mill provides 20 bags of flour that can be used in certain cooking recipes. Bags of flour respawn periodically.", iconType: "location" },
-  { name: "Guardian Arena", coords: [1759, 562], desc: "A mysterious gateway to elite challenges.", iconType: "location" },
+  { name: "Guardian Arena", coords: [1759, 562], desc: "A mysterious gateway to elite challenges.<br><br>Choose between Novice (U), Apprentice (R), and Champion (E). Each requires 2 Arcane Fragment (U) to enter.", iconType: "location" },
   { name: "Royal Emporium", coords: [1287, 1060], desc: "Shop for Lost Relics, Collectibles, gear, cosmetics, and many other tradeables.", iconType: "location" },
   { name: "Engineering Bench", coords: [959, 534], desc: "Craft weapons and tools.", iconType: "location" },
   { name: "Alchemy Table", coords: [367, 1558], desc: "Brew powerful potions.", iconType: "location" },
