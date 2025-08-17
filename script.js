@@ -56,7 +56,7 @@ const locations = [
   { name: "Player Housing", coords: [1645, 115], desc: "Home Sweet Home. Collectible cosmetics can be used to change the style of your house.<br><br>Purchasing a home unlocks all production stations and the Tanning Table on your property.", iconType: "location" },
   { name: "Anvil, Furnace, and Arcane Fuser", coords: [1315, 1566], desc: "Anvil and Furnace are hot and ready for all your Forging needs. The Arcane Fuser is used to exchange Arcane Fragments.", iconType: "location" },
   { name: "Stove", coords: [1897, 1316], desc: "A public place for Cooking.", iconType: "location" },
-  { name: "Terror Descent", coords: [1929, 840], desc: "Do you dare enter the 4 levels of the Terror Descent dungeon?", iconType: "location" },
+  { name: "Terror Descent", coords: [1929, 840], desc: "Do you dare enter the 4 levels of the Terror Descent dungeon? Restricted to maximum of Epic gear.", iconType: "location" },
   { name: "Cavern of Paths", coords: [1961, 327], desc: "All adventures from Common to Transcendent. The enemies are waiting!", iconType: "location" },
 
   // NPCs
