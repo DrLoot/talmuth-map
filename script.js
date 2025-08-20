@@ -50,17 +50,17 @@ const locations = [
   { name: "Guardian Arena", coords: [1759, 562], desc: "A mysterious gateway to elite challenges.<br><br>Choose between Novice (U), Apprentice (R), and Champion (E). Each requires 2 Arcane Fragment (U) to enter.", iconType: "location" },
   { name: "Royal Emporium", coords: [1287, 1060], desc: "Shop for Lost Relics, Collectibles, gear, cosmetics, and many other tradeables.", iconType: "location" },
   { name: "Engineering Bench", coords: [959, 534], desc: "Craft weapons and tools.", iconType: "location" },
-  { name: "Alchemy Table", coords: [367, 1558], desc: "Brew powerful potions.", iconType: "location" },
+  { name: "Alchemy Table", coords: [412, 1597], desc: "Brew powerful potions.", iconType: "location" },
   { name: "Sword & Stein Tavern", coords: [1155, 1348], desc: "1st Floor: Purchase daily drawing lottery tickets, purchase supplies from the bartender, and purchase Valor contracts from Valor Contractor.<br><br>Basement: A crusher is used to crush bones and runes.<br><br>2nd Floor: Spinning Wheel to make bowstrings, Dreamscapemancer NPC to access Dreamscape, Armor Assembly Stand, rift to Cavern of Paths, and a player's stash.", iconType: "location" },
-  { name: "Altar", coords: [281, 706], desc: "Mysterious magical altar infused with magic from the old world.", iconType: "location" },
+  { name: "Altar", coords: [281, 706], desc: "Mysterious magical altar infused with magic from the old world.<br><br>Adventure Teleport Scroll (U) for Blank Papyrus (U) and Cardinalcrisp Apple (U) and Spellbinding Powder (C)<br><br>Inverdhen Teleport Scroll (U) for Blank Papyrus (U) and 2x Arcane Fragment (U) and Spellbinding Powder (C)<br><br>Talmuth Teleport Scroll (U) for Blank Papyrus (U) and Hawthorne Cactus (U) and Spellbinding Powder (C)<br><br>Enchanted Isle Scroll (E) for Blank Papyrus (U) and Galaxy Stone (E) and Luminal Extract (E).", iconType: "location" },
   { name: "Player Housing", coords: [1645, 115], desc: "Home Sweet Home. Collectible cosmetics can be used to change the style of your house.<br><br>Purchasing a home unlocks all production stations and the Tanning Table on your property.", iconType: "location" },
-  { name: "Anvil, Furnace, and Arcane Fuser", coords: [1315, 1566], desc: "Anvil and Furnace are hot and ready for all your Forging needs. The Arcane Fuser is used to exchange Arcane Fragments.", iconType: "location" },
   { name: "Stove", coords: [1897, 1316], desc: "A public place for Cooking.", iconType: "location" },
   { name: "Terror Descent", coords: [1929, 840], desc: "Do you dare enter the 4 levels of the Terror Descent dungeon? Restricted to maximum of Epic gear.", iconType: "location" },
+  { name: "Arcane Fuser", coords: [1343, 1729], desc: "The fuser offers a chance at upgrading your Arcane Fragments.<br><br>95% chance to receive an Arcane Fragment (R) or 5% chance to receive an Arcane Fragment (E) for 15x Arcane Fragment (U).", iconType: "location" },
   { name: "Cavern of Paths", coords: [1961, 327], desc: "All adventures from Common to Transcendent. The enemies are waiting!", iconType: "location" },
 
   // NPCs
-  { name: "Enjinious Blocksmith", coords: [1433, 1200], desc: "Enjinious Blocksmith runs the Enjin Multiverse Event Leaderboards. He'll reward you with a Multiverse Mystery Box in exchange for 2 Multiverse Medallions.", iconType: "npc" },
+  { name: "Enjinious Blocksmith", coords: [1433, 1200], desc: "Enjinious Blocksmith runs the Enjin Multiverse Event Leaderboards.<br><br>He'll reward you with a Multiverse Mystery Box in exchange for 2 Multiverse Medallions.", iconType: "npc" },
   { name: "Oliver Greenfield", coords: [1614, 305], desc: "Oliver also flips homes! Unlock Talmuth Homeowner for 2x Arcane Fragment (E), 2x Arcane Fragment (L), 1,000,000 Gold.", iconType: "npc" },
   {
     name: "Oliver Greenfield",
@@ -104,35 +104,35 @@ const locations = [
     iconType: "npc"
   },
   {
-    name: "Orin Thalios NPC",
+    name: "Orin Thalios",
     coords: [1007, 1160],
     desc: `Orin Thalios is a great, wise sage. He controls the Waygate and offers exchanges for Membership Orbs and Valor rewards for each season's Expedition.<br><br>
            <button class="inventory-btn" data-npc="orin">🧾 View Inventory</button>`,
     iconType: "npc"
   },
   {
-    name: "Viola Nightbloom NPC",
+    name: "Viola Nightbloom",
     coords: [839, 1104],
     desc: `Viola Nightbloom obsesses over Luneri and offers magical buffs to anyone that drops the crescent moon currency in her tip jar.<br><br>
            <button class="inventory-btn" data-npc="viola">🧾 View Inventory</button>`,
     iconType: "npc"
   },
   {
-    name: "Salvage Captain Wren NPC",
+    name: "Salvage Captain Wren",
     coords: [355, 1650],
     desc: `Salvage Captain Wren is an expert in the alchemical arts. She offers rewards for Arachnadon Fangs.<br><br>
     <button class="inventory-btn" data-npc="wren">🧾 View Inventory</button>`,
     iconType: "npc"
   },
   {
-    name: "Timberlord Thornsnap NPC",
+    name: "Timberlord Thornsnap",
     coords: [953, 608],
     desc: `Timberlord Thornsnap is a master engineer. He offers rewards in exchange for the rare Leafsong Resin.<br><br>
     <button class="inventory-btn" data-npc="thornsnap">🧾 View Inventory</button>`,
     iconType: "npc"
   },
   {
-    name: "Fisherking Nautica NPC",
+    name: "Fisherking Nautica",
     coords: [1852, 1352],
     desc: `Fisherking Nautica is the king of fishing. He's on the lookout for Croakreaver Fins and will offer some nice rewards in exchange.<br><br>
     <button class="inventory-btn" data-npc="nautica">🧾 View Inventory</button>`,
@@ -140,7 +140,7 @@ const locations = [
   },
 
   {
-    name: "Quarrymaster Grimstone NPC",
+    name: "Quarrymaster Grimstone",
     coords: [1369, 1612],
     desc: `Quarrymaster Grimstone is a master smith. He'll pay handsomely for some Stoneheart Shards.<br><br> 
     <button class="inventory-btn" data-npc="grimstone">🧾 View Inventory</button>`,
